@@ -9,7 +9,9 @@ class Post < ActiveRecord::Base
     CLICKBAIT=["Won't Believe", "Secret", /Top [0..1]/, "Guess"]
     flag=true
     CLICKBAIT.each do |item|
-      if self.title.contain?(item) flag=false
+      if self.title.contain?(item) 
+        flag=false
+      end
     end
     return flag
   end
