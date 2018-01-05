@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   validate :clickbait?
 
   def clickbait?
-    CLICKBAIT=["Won't Believe", "Secret", /Top [0..1]/, "Guess"]
+    CLICKBAIT=[/Won't Believe/, /Secret/, /Top [0..1]/, /Guess/]
     flag=true
     CLICKBAIT.each do |item|
       if self.title.contain?(item)
